@@ -1,0 +1,16 @@
+﻿@model LoginModel
+
+@{
+    ViewBag.Title = "Авторизация";
+    Layout = "_Layout";
+}
+
+<div>
+    @using (Html.BeginForm("Login", "Auth", FormMethod.Post))
+    {
+        @Html.TextBoxFor(x => x.Login, new { placeholder = "Логин" })
+        @Html.ValidationMessageFor(x=>x.Login)
+        @Html.TextBoxFor(x => x.Password, new { placeholder = "Пароль" })
+        @Html.ValidationMessageFor(x=>x.Password)
+    }
+</div>
